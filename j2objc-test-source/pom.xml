@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.d2dx.j2objc</groupId>
+		<artifactId>j2objc-plugin-build</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>j2objc-test-source</artifactId>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.d2dx.j2objc</groupId>
+				<artifactId>j2objc-maven-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<configuration>
+					<includeClasspath>true</includeClasspath>
+					<includeDependencySources>true</includeDependencySources>
+					<prefixes>
+						<prefix>
+							<javaPrefix>com.d2dx</javaPrefix>
+							<objcPrefix>D2</objcPrefix>
+						</prefix>
+					</prefixes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>foo</id>
+						<goals>
+							<goal>translate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
